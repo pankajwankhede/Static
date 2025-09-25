@@ -61,3 +61,21 @@ window.addEventListener("DOMContentLoaded", () => {
   loadHTML("footer", "footer.html");
 });
 
+=====================
+<div id="header"></div>
+<div id="footer"></div>
+
+<script>
+  function loadHTML(id, file) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", file, false); // synchronous
+    xhr.send();
+    if (xhr.status === 200) {
+      document.getElementById(id).innerHTML = xhr.responseText;
+    }
+  }
+
+  loadHTML("header", "header.html");
+  loadHTML("footer", "footer.html");
+</script>
+
